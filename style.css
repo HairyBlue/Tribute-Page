@@ -1,0 +1,322 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: aqua;
+}
+
+.timeline ul li a,.image-source a {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* landing page
+**********************************************************
+*/
+#img-div {
+    content: '';
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    position: relative;
+}
+
+#img-caption {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./img/dmc.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: fixed;
+}
+
+#img-caption::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.356);
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    z-index: -1;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 767px){
+    #img-div { 
+        min-height: 50vh;
+    }
+    #img-caption  { 
+        min-height: 50vh;
+    }
+}
+
+
+/*
+@media only screen and (min-height: 950px ) {
+    #img-div { 
+        height: 800px;
+    }
+    #img-caption  { 
+        height: 800px;
+    }
+    #img-caption::after {
+        height: 800px;
+    }
+}
+*/
+
+ .banner-caption {
+    width: 100%;
+    min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+    position: absolute;
+    color: black;
+ }
+
+ .banner-caption h1 {
+     font-size: 100px;
+     font-weight: 400;
+     text-shadow: 0 0 10px red;
+     align-self: center;
+     }
+
+ .banner-caption p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 0 10px rgb(255, 3, 3);
+    align-self: center;
+}
+
+
+ @media only screen and (min-width: 375px) and (max-width: 767px){
+    .banner-caption {
+        min-height: 50vh;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+        position: absolute;
+        color: black;
+     }
+    .banner-caption h1 {
+        font-size: 50px;
+        font-weight: 500;
+        text-shadow: 0 0 4px red;
+        align-self: center;
+    }
+    .banner-caption p {
+        font-size: 15px;
+        font-weight: 10;
+        color: rgb(199, 134, 134);
+        text-shadow: 0 0 2px rgb(255, 3, 3);
+        align-self: center;
+    }
+    /*
+    .banner-caption {
+       position: relative;
+       text-align: center;
+       margin-top: 80px;
+       color: rgb(36, 35, 34);
+    } */
+ }
+
+ 
+
+
+  /* 
+   background-image: url(./img/dmc.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: fixed;
+  
+  */
+
+  /* timeline*/
+.container {
+    min-height: 90vh;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #101010;
+   }
+
+   
+   .timeline {
+       width: 80%;
+       height: auto;
+       margin: 0 auto;
+       position: relative;
+   }
+
+   
+   .timeline ul {
+       list-style: none;
+   }
+   
+   .timeline ul li {
+       padding: 20px ;
+       background-color: #1e1f22;
+       color: white;
+       border-radius: 10px;
+       margin-bottom: 20px;
+   }
+
+   .timeline ul li:hover {
+       box-shadow: 0 0 8px white;
+   }
+   .timeline ul li:last-child {
+       margin-bottom: 0;
+   }
+   
+   @media only screen and (min-width: 768px) {
+       .timeline::before {
+           content: '';
+           height: 100%;
+           width: 2px;
+           left: 50%;
+           position: absolute;
+           background-color:gray ;
+           box-shadow: 0 0 2px red;
+       }
+       .timeline ul li {
+           width: 50%;
+           margin-bottom: 50px;
+           position: relative;
+       }
+       .timeline ul li:nth-child(odd) {
+          float: left;
+          clear: right;
+          transform: translateX(-30px);
+          border-radius: 20px 0 20px 20px;
+       }
+       
+       .timeline ul li:nth-child(even) {
+           float: right;
+           clear: left;
+           transform: translateX(30px);
+           border-radius: 0 20px 20px 20px;
+        }
+        .timeline ul li::after {
+            content:'';
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            background-color: gray;
+            border-radius: 50%;
+            box-shadow: inset 0 0 10px red;
+        }
+        .timeline ul li:hover::after {
+            box-shadow: inset 0 0 10px red;
+        }
+        .timeline ul li:nth-child(odd)::after {
+            transform: translate(50%, -400%);
+            right: -30px;
+        }
+        .timeline ul li:nth-child(even)::after {
+           transform: translate(-50%, -400%);
+           left: -30px;
+       }
+   
+   }
+   
+   @media only screen and (min-width: 992px) {
+       .timeline ul li:nth-child(odd) {
+           border-radius: 10px 0 10px 10px;
+        }
+        .timeline ul li:nth-child(even) {
+            border-radius: 0 10px 10px 10px;
+        }
+       .timeline ul li:nth-child(odd)::after {
+           transform: translate(50%, -300%);
+           right: -30px;
+       }
+       .timeline ul li:nth-child(even)::after {
+          transform: translate(-50%, -300%);
+          left: -30px;
+      }
+   }
+
+
+   .content-wrap {
+       content: '';
+       min-height: 100vh;
+       width: 100%;
+       background-color: white;
+       position: relative;
+       text-align: center;
+   }
+
+   .game-director {
+     min-height: 100vh;
+     width: 100%;
+     color: black;
+     padding: 50px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
+
+   .game-director h2{
+       font-size: 40px;
+       font-weight: 1200;
+   }
+
+   .game-director h3{
+       font-size: 30px;
+       font-weight: 900;
+   }
+
+
+   .img-director {
+       width: 300px;
+       height: 300px;
+       border-radius: 50%;
+       box-shadow: 0 0 10px gray;
+   }
+
+footer {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    background-color: #1e1f22;
+    color: #fff;
+    padding: 10vh 0;
+}
+
+.credit {
+    margin-top: 30px;
+}
+
+.fcc-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+}
